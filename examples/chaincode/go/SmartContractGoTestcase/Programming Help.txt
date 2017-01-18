@@ -1,0 +1,37 @@
+//**************************************************//
+//              Programming Help                    //
+//**************************************************//
+
+"LIST" HELP
+	Copy
+		b = make([]T, cap(a), len(a)) (T is the type, cap(a) = number of elements in it, len(a) = size of slice)
+		copy(b, a) // or b = append([]T(nil), a...)
+
+	Cut
+		a = append(a[:i], a[j:]...)
+
+	Delete
+		a = append(a[:i], a[i+1:]...) // or a = a[:i+copy(a[i:], a[i+1:])]
+
+	Delete without preserving order
+		a[i], a = a[len(a)-1], a[:len(a)-1]
+
+	Pop
+		x, a = a[len(a)-1], a[:len(a)-1]
+
+	Push
+		a = append(a, x)
+
+MAPS HELP
+	init
+		m = make(map[string]int)
+	
+	check if key is there
+		value, ok := map[key] if you dont care about the value you can use: _ , ok := map[key]
+		if ok {//key is there}
+
+	for key, value := range m {
+		fmt.Println("Key:", key, "Value:", value)
+	}
+
+delete(map, value) -> Deletes the pair from the map
