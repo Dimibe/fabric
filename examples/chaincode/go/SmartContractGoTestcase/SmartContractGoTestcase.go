@@ -554,7 +554,7 @@ func (o *OurChaincode) Query(stub shim.ChaincodeStubInterface, function string, 
 
 	if function != "" { //"" is empty / default value -> no error here
 		fmt.Println("Hello there " + function)
-		return nil, nil
+		return []byte("10"), nil
 	}
 	fmt.Println("query did not find func: " + function)
 	return nil, errors.New("Received unknown function query: " + function)
